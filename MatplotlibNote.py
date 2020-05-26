@@ -81,7 +81,9 @@ for label in ax.get_xticklabels() + ax.get_yticklabels():
     label.set_bbox(dict(facecolor='white',edgecolor='none',alpha=0.7,zorder=2)) 
     #alpha负责能见度，zorder=2是呼应前面的zorder=1，让更高级别的设置可以覆盖更低级别的设置
 
+#这里尤其要注意的是，想要成功保存的话，一定要把保存语句写在show语句之前！！！否则你保存下来的将是一个新的空白图。
+plt.savefig(r'D:\MyFiles\MyCode\figpath.tif', dpi=400, bbox_inches='tight')  #dpi，控制每英寸长度上的分辨率
+                                                                              #bbox_inches, 能删除figure
+
 #显示图片,seaborn也用这个函数来显示图片
 #plt.show()
-plt.savefig(r'D:\MyFiles\MyCode\figpath.tif', dpi=400, bbox_inches='tight')  #dpi，控制每英寸长度上的分辨率
-                                                                              #bbox_inches, 能删除figure周围的空白部分
